@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RPS Arena</title>
+<link rel="stylesheet" href="playground.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+
+<body>
+
+<div class="game">
+
+    <h1 class="title">RPS Arena</h1>
+    <p class="subtitle">Let's play Rock, Paper, Scissors!!</p>
+    <!-- main playground -->
+    <div class="battle-area">
+        <!-- computer -->
+        <div class="side">
+            <div class="name">Computer</div>
+            <div class="hand" id="computerHand">
+                ✊🏻
+            </div>
+        </div>
+        <!-- scoreboard-->
+        <div class="scoreboard">
+            <h2>Scoreboard</h2>
+            <div class="score">
+                You : <span id="userscore">0</span>
+            </div>
+            <div class="vs">
+                VS
+            </div>
+            <div class="score">
+                Computer : <span id="computerscore">0</span>
+            </div>
+            <div class="score">
+                Ties : <span id="tiescore">0</span>
+            </div>
+        </div>
+        <!-- player -->
+        <div class="side">
+            <div class="name">Player</div>
+            <div class="hand" id="playerhand">
+                ✊🏻
+            </div>
+        </div>
+    </div>
+    <!-- result-->
+    <div class="result" id="result">
+        Choose your move
+    </div>
+    <!-- buttons -->
+    <div class="buttons">
+        <button onclick="playGame('rock')">
+            ✊🏻 Rock
+        </button>
+        <button onclick="playGame('paper')">
+            ✋🏻 Paper
+        </button>
+        <button onclick="playGame('scissors')">
+            ✌🏻 Scissors
+        </button>
+    </div>
+</div>
+<script>
+    let userscore = 0;
+    let computerscore = 0;
+    let tiescore = 0;
+    const choices = ["rock","paper","scissors"];
+    function getEmoji(choice){
+        if(choice === "rock"){
+            return "✊🏻";
+        }
+        else if(choice === "paper"){
+            return "✋🏻";
+        }
+        else{
+            return "✌🏻";
+        }
+    }
+    function playGame(userChoice){
+        const computerChoice =
+        choices[Math.floor(Math.random() * 3)];
+
+        document.getElementById("playerhand").innerHTML =
+        getEmoji(userChoice);
+
+        document.getElementById("computerHand").innerHTML =
+        getEmoji(computerChoice);
+        
+        let resultText = "";
+        if(userChoice === computerChoice){
+            resultText = "It's a Tie!";
+            tiescore++;
+        }
+        else if(
+            (userChoice === "rock" && computerChoice === "scissors") ||
+            (userChoice === "paper" && computerChoice === "rock") ||
+            (userChoice === "scissors" && computerChoice === "paper")
+        ){
+            resultText = "You Win!";
+            userscore++;
+        }
+        else{
+            resultText = "Computer Wins!";
+            computerscore++;
+        }
+        document.getElementById("result").innerHTML =
+        resultText;
+        document.getElementById("userscore").innerHTML =
+        userscore;
+        document.getElementById("computerscore").innerHTML =
+        computerscore;
+        document.getElementById("tiescore").innerHTML =
+        tiescore;
+    }
+</script>
+
+</body>
+</html>
