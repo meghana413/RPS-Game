@@ -14,7 +14,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
 /* main container */
@@ -50,6 +50,7 @@ body{
     gap:120px;
     margin-bottom:50px;
     flex-wrap:wrap;
+    flex-direction: row;
 }
 
 /* user side */
@@ -156,21 +157,75 @@ body{
 }
 
 /* mediaside */
+ @media (max-width:900px){
 
-@media(max-width:900px){
+    body{
+        overflow-x:hidden;
+        padding:15px;
+    }
+
     .title{
-        font-size:50px;
+        font-size:42px;
+        line-height:1.2;
     }
+
+    .subtitle{
+        font-size:16px;
+        margin-bottom:25px;
+    }
+
     .battle-area{
-        gap:50px;
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+        gap:10px;
     }
+
+    .side{
+        gap:10px;
+    }
+
+    .name{
+        font-size:18px;
+    }
+
     .hand{
-        width:170px;
-        height:170px;
-        font-size:90px;
+        width:90px;
+        height:90px;
+        font-size:50px;
+        border-radius:20px;
     }
+
     .scoreboard{
-        width:100%;
-        max-width:320px;
+        width:180px;
+        padding:18px;
+    }
+
+    .scoreboard h2{
+        font-size:22px;
+    }
+
+    .score{
+        font-size:16px;
+    }
+
+    .vs{
+        font-size:28px;
+    }
+
+    .result{
+        font-size:22px;
+        margin:25px 0;
+    }
+
+    .buttons{
+        gap:10px;
+        flex-wrap:wrap;
+    }
+
+    .buttons button{
+        font-size:16px;
+        padding:12px 18px;
     }
 }
