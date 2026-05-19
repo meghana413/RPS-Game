@@ -45,14 +45,6 @@ h1{
     gap: 40px;
     margin-top: 40px;
 }
-
-.iconnames{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 100px;
-    /* flex-wrap: wrap; */
-}
 .rock{
     font-size: 24px;
     font-weight: bold;
