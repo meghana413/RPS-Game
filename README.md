@@ -11,7 +11,7 @@ This project includes:
 
 ---
 # Live Link
-https://meghana413.github.io/RPS-Game/
+ https://meghana413.github.io/RPS-Game/
 # 🚀 Features
 
 - ✊ Rock, ✋ Paper, ✌️ Scissors gameplay
